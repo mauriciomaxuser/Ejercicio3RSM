@@ -17,7 +17,6 @@ class Proyecto(models.Model):
     nombre = models.CharField(max_length=100)
     descripcion = models.CharField(max_length=100)
     fecha_inicio = models.DateField()
-
     responsable = models.ForeignKey(Desarrollador, on_delete=models.CASCADE)
     
     
