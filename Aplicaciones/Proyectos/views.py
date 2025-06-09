@@ -90,3 +90,8 @@ def actualizandoDesarrollador(request):
     messages.success(request,"Desarrollador Actualizado Exitosamente")
 
     return redirect('/desarrolladores')
+
+
+def editarProyecto(request,id):
+    proyectoEditar=Proyecto.objects.get(id=id)
+    return render(request,"editarProyecto.html", {'proyectoEditar':proyectoEditar})
