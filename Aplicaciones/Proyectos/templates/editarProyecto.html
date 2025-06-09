@@ -17,6 +17,15 @@
             <input class="form-control" type="text" name="descripcion" id="descripcion" value="{{ proyectoEditar.descripcion }}"><br>
             <label for="">Fecha</label><br>
             <input class="form-control" type="date" name="fecha_inicio" id="fecha_inicio" value="{{proyectoEditar.fecha_inicio|date:'Y-m-d'}}"><br>
+            <label for="modelo">Responsable:</label>
+            <select class="form-control" name="responsable" id="responsable" required>
+                <option value="">Seleccione un responsable</option>
+                {% for r in responsable %}
+                    <option value="{{ r.id }}" {% if r.id == proyectoEditar.responsable.id %}selected{% endif %}>
+                        {{ r.nombre }} {{ r.apellido }}
+                    </option>
+                {% endfor %}
+            </select><br>
 
             <button
             class="btn btn-success" type="submit">Actualizar</button>

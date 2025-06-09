@@ -92,6 +92,37 @@ def actualizandoDesarrollador(request):
     return redirect('/desarrolladores')
 
 
-def editarProyecto(request,id):
-    proyectoEditar=Proyecto.objects.get(id=id)
-    return render(request,"editarProyecto.html", {'proyectoEditar':proyectoEditar})
+
+
+
+def editarProyecto(request, id):
+    proyectoEditar = Proyecto.objects.get(id=id)
+    responsable = Desarrollador.objects.all()
+    
+
+    return render(request, "editarProyecto.html", {
+        'proyectoEditar': proyectoEditar,
+        'responsable': responsable
+    })
+    
+    
+    
+def actualizarProyecto(request):
+    id = request.POST.get("id")  
+    responsable_id = request.POST.get("responsable")  
+
+
+    
+    
+    proyecto = Proyecto.objects.get(id=id)
+            
+    proyecto.modelo_id = responsable_id 
+      
+            
+    
+    
+    
+    proyecto.save()
+    messages.success(request,"Participacion Actualizado Exitosamente")
+
+    return redirect('/participacion')
