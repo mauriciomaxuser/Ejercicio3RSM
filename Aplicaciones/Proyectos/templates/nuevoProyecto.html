@@ -6,7 +6,7 @@
     <div class="col-md-3"></div>
     <div class="col-md-6 bg-light">
         <h1>NUEVO PROYECTO </h1>
-        <form action="guardarProyecto" 
+        <form action="guardarProyecto" id="form_proyecto" 
         enctype="multipart/form-data" 
         method="post" >
             {% csrf_token %}
@@ -39,7 +39,7 @@
 <!--embeber codiog javascript/jquery-->
 
 <script>
-    $("#form_nuevo_modelo").validate(
+    $("#form_proyecto").validate(
         {
             rules:{
                 "nombre":{
@@ -47,24 +47,21 @@
                     minlength:5,
                     maxlength:20
                 },
-                "apellido":{
+                "descripcion":{
                     required:true,
                     minlength:5,
                     maxlength:20
                 },
-                "sexo":{
+                "fecha":{
                     required:true,
-                    minlength:8,
-                    maxlength:13
+                    
                 },
-                "foto": {
-                required: true,
-                extension: "jpg|jpeg|png|gif"
+                "responsable":{
+                    required:true,
+                    minlength:5,
+                    maxlength:20
                 },
-                "documento": {
-                    required: true,
-                    extension: "pdf"
-                }
+                
             },
             messages:{
                 "nombre":{
@@ -72,24 +69,21 @@
                     minlength:"Mínimo 5 letras",
                     maxlength:"Máximo 20 letras"
                 },
-                "apellido":{
-                    required:"Ingrese el apellido",
+                "descripcion":{
+                    required:"Ingrese el nombre",
                     minlength:"Mínimo 5 letras",
                     maxlength:"Máximo 20 letras"
                 },
-                "sexo":{
-                    required:"Ingrese el sexo",
-                    minlength:"Mínimo 8 letras",
-                    maxlength:"Máximo 13 letras"
+                "fecha":{
+                    required:"Ingrese la fecha",
+                    
                 },
-                "foto": {
-                required: "Debe subir una imagen",
-                extension: "Solo se permiten archivos jpg, jpeg, png o gif"
+                "responsable":{
+                    required:"Ingrese el nombre",
+                    minlength:"Mínimo 5 letras",
+                    maxlength:"Máximo 20 letras"
                 },
-                "documento": {
-                    required: "Debe subir un documento PDF",
-                    extension: "Solo se permiten archivos PDF"
-                }
+                
             }
         }
     ); 
