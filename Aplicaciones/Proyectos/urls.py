@@ -15,6 +15,10 @@ urlpatterns=[
     path('actualizandoDesarrollador/', views.actualizandoDesarrollador),
     path('editarProyecto/<id>', views.editarProyecto),
     path('actualizandoProyecto/', views.actualizandoProyecto),
+    path('eliminarDesarrollador/<id>', views.eliminarDesarrollador),
+    path('eliminarProyecto/<id>', views.eliminarProyecto),
+
+
 
 
 

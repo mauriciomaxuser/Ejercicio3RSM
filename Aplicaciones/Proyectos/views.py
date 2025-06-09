@@ -119,9 +119,25 @@ def actualizandoProyecto(request):
     proyecto.nombre = nombre
     proyecto.descripcion = descripcion
     proyecto.fecha_inicio = fecha_inicio
-    proyecto.responsable_id = responsable_id  # asignamos el id del responsable directamente
+    proyecto.responsable_id = responsable_id  
 
     proyecto.save()
     messages.success(request, "Proyecto Actualizado Exitosamente")
 
-    return redirect('/inicio')  # redirige a donde quieras, por ejemplo al listado de proyectos
+    return redirect('/inicio') 
+
+
+def eliminarDesarrollador(request,id):
+    desarrolladorEliminar=Desarrollador.objects.get(id=id)
+    desarrolladorEliminar.delete()
+    messages.success(request,"Desarrollador Eliminado Exitosamente")
+    return redirect('/desarrolladores')
+
+
+
+
+def eliminarProyecto(request,id):
+    proyectoEliminar=Proyecto.objects.get(id=id)
+    proyectoEliminar.delete()
+    messages.success(request,"Proyecto Eliminado Exitosamente")
+    return redirect('/inicio')
