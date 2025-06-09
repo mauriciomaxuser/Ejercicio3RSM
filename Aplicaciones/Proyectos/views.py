@@ -107,22 +107,21 @@ def editarProyecto(request, id):
     
     
     
-def actualizarProyecto(request):
-    id = request.POST.get("id")  
-    responsable_id = request.POST.get("responsable")  
+def actualizandoProyecto(request):
+    id = request.POST.get("id")
+    nombre = request.POST.get("nombre")
+    descripcion = request.POST.get("descripcion")
+    fecha_inicio = request.POST.get("fecha_inicio")
+    responsable_id = request.POST.get("responsable")
 
-
-    
-    
     proyecto = Proyecto.objects.get(id=id)
-            
-    proyecto.modelo_id = responsable_id 
-      
-            
-    
-    
-    
-    proyecto.save()
-    messages.success(request,"Participacion Actualizado Exitosamente")
 
-    return redirect('/participacion')
+    proyecto.nombre = nombre
+    proyecto.descripcion = descripcion
+    proyecto.fecha_inicio = fecha_inicio
+    proyecto.responsable_id = responsable_id  # asignamos el id del responsable directamente
+
+    proyecto.save()
+    messages.success(request, "Proyecto Actualizado Exitosamente")
+
+    return redirect('/inicio')  # redirige a donde quieras, por ejemplo al listado de proyectos
