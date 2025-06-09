@@ -13,6 +13,7 @@ urlpatterns=[
     path('guardarProyecto', views.guardarProyecto),
     path('editarDesarrollador/<id>', views.editarDesarrollador),
     path('actualizandoDesarrollador/', views.actualizandoDesarrollador),
+    path('editarProyecto/<id>', views.editarProyecto),
 
 
 

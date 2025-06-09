@@ -16,7 +16,7 @@
             <label for="">Descripción</label><br>
             <input class="form-control" type="text" name="descripcion" id="descripcion" value="{{ proyectoEditar.descripcion }}"><br>
             <label for="">Fecha</label><br>
-            <input class="form-control" type="date" name="fecha_inicio" id="fecha_inicio" value="{{proyectoEditar.fecha_inicio}}"><br>
+            <input class="form-control" type="date" name="fecha_inicio" id="fecha_inicio" value="{{proyectoEditar.fecha_inicio|date:'Y-m-d'}}"><br>
 
             <button
             class="btn btn-success" type="submit">Actualizar</button>
