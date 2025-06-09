@@ -6,7 +6,7 @@
     <div class="col-md-3"></div>
     <div class="col-md-6 bg-light">
         <h1>EDITAR DESARROLLADOR </h1>
-        <form action="/actualizandoDesarrollador/" 
+        <form action="/actualizandoDesarrollador/" id="form_desarrollador" 
         method="post" >
             {% csrf_token %}
             <input  type="hidden" name="id" id="id" value="{{desarrolladorEditar.id}}"><br>
@@ -30,7 +30,7 @@
 <!--embeber codiog javascript/jquery-->
 
 <script>
-    $("#form_nuevo_evento").validate(
+    $("#form_desarrollador").validate(
         {
             rules:{
                 "nombre":{
@@ -40,6 +40,8 @@
                 },
                 "apellido":{
                     required:true,
+                    minlength:4,
+                    maxlength:20
                 },
                 "especialidad":{
                     required:true,

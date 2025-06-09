@@ -70,4 +70,23 @@ def editarDesarrollador(request,id):
     return render(request,"editarDesarrollador.html", {'desarrolladorEditar':desarrolladorEditar})
 
 
+def actualizandoDesarrollador(request):
+    id=request.POST["id"]
+    nombre=request.POST["nombre"]
+    apellido=request.POST["apellido"]
+    especialidad=request.POST["especialidad"]
 
+
+    
+    
+    desarrollador=Desarrollador.objects.get(id=id)
+    desarrollador.nombre=nombre
+    desarrollador.apellido=apellido
+    desarrollador.especialidad=especialidad
+
+    
+    
+    desarrollador.save()
+    messages.success(request,"Desarrollador Actualizado Exitosamente")
+
+    return redirect('/desarrolladores')
