@@ -13,89 +13,10 @@
         </a>
     </div>
 </div>
+
 <br><br><br>
-<table  class="table table-bordered table-striped table-hover">
-    <thead>
-        <tr>
-            <th>ID</th>    
-            <th>NOMBRE</th>
-            <th>DESCRIPCIÓN</th>
-            <th>FECHA</th>
-            <th>RESPONSABLE</th>
 
 
-            <th>ACCIONES</th> 
-        </tr>
-    </thead>
-    <tbody>
-        {% for proyectoTemporal in Proyecto %}
-            <tr>
-                <td>{{proyectoTemporal.id}}</td>
-                <td>{{proyectoTemporal.nombre}}</td>
-
-                <td>{{proyectoTemporal.descripcion}}</td>
-                <td>{{proyectoTemporal.fecha_inicio}}</td>
-                <td>{{ proyectoTemporal.responsable.nombre }} {{ proyectoTemporal.responsable.apellido }}
-
-
-                <td>  
-
-                    <a href="#" 
-                    onclick="editarProyecto('{{proyectoTemporal.id}}');"
-                    class="btn btn-outline-warning">
-                        <i class="fa fa-pen"></i>
-                    </a>           
-                    <a href="#"
-                    onclick="eliminarProyecto('{{proyectoTemporal.id}}');"
-                     class="btn btn-outline-danger">
-                     <i class="fa fa-trash"></i>
-                    </a>
-                    
-                </td>
-                
-            </tr>
-            
-        {%endfor%}       
-    </tbody>
-</table>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script>
-    function eliminarProyecto(id) {
-        Swal.fire({
-            title: "Confirmacion?",
-            text: "Seguro que desea eliminar!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Si, Eliminar"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                
-                    window.location.href = "/eliminarProyecto/" + id;
-                }
-        });
-    }
-</script>
-
-<script>
-    function editarProyecto(id) {
-        Swal.fire({
-            title: "Confirmacion?",
-            text: "Seguro que desea editar !",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Si, Editar"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                
-                    window.location.href = "/editarProyecto/" + id;
-                }
-        });
-    }
-</script>
 
 
 
