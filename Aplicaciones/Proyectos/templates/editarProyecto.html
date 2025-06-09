@@ -39,41 +39,51 @@
 <!--embeber codiog javascript/jquery-->
 
 <script>
-    $("#form_desarrollador").validate(
+    $("#form_proyecto").validate(
         {
             rules:{
                 "nombre":{
                     required:true,
-                    minlength:4,
+                    minlength:5,
                     maxlength:20
                 },
-                "apellido":{
+                "descripcion":{
                     required:true,
-                    minlength:4,
+                    minlength:5,
                     maxlength:20
                 },
-                "especialidad":{
+                "fecha":{
                     required:true,
-                    minlength:4,
+                    
+                },
+                "responsable":{
+                    required:true,
+                    minlength:5,
                     maxlength:20
                 },
+                
             },
             messages:{
                 "nombre":{
-                    required:"Ingrese el nombre del evento",
-                    minlength:"Mínimo 4 letras",
+                    required:"Ingrese el nombre",
+                    minlength:"Mínimo 5 letras",
                     maxlength:"Máximo 20 letras"
                 },
-                 "apellido":{
-                    required:"Ingrese el apellido",
-                    minlength:"Mínimo 4 letras",
+                "descripcion":{
+                    required:"Ingrese el nombre",
+                    minlength:"Mínimo 5 letras",
                     maxlength:"Máximo 20 letras"
                 },
-                "especialidad":{
-                    required:"Ingrese la especialidad",
-                    minlength:"Mínimo 4 letras",
+                "fecha":{
+                    required:"Ingrese la fecha",
+                    
+                },
+                "responsable":{
+                    required:"Ingrese el nombre",
+                    minlength:"Mínimo 5 letras",
                     maxlength:"Máximo 20 letras"
                 },
+                
             }
         }
     ); 

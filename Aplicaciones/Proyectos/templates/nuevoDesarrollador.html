@@ -6,7 +6,7 @@
     <div class="col-md-3"></div>
     <div class="col-md-6 bg-light">
         <h1>NUEVO DESARROLLADOR </h1>
-        <form action="guardarDesarrollador" 
+        <form action="guardarDesarrollador" id="form_desarrollador" 
         enctype="multipart/form-data" 
         method="post" >
             {% csrf_token %}
@@ -33,7 +33,7 @@
 <!--embeber codiog javascript/jquery-->
 
 <script>
-    $("#form_nuevo_modelo").validate(
+    $("#form_desarrollador").validate(
         {
             rules:{
                 "nombre":{
@@ -46,18 +46,10 @@
                     minlength:5,
                     maxlength:20
                 },
-                "sexo":{
+                "Especialidad":{
                     required:true,
-                    minlength:8,
-                    maxlength:13
-                },
-                "foto": {
-                required: true,
-                extension: "jpg|jpeg|png|gif"
-                },
-                "documento": {
-                    required: true,
-                    extension: "pdf"
+                    minlength:5,
+                    maxlength:20
                 }
             },
             messages:{
@@ -71,34 +63,17 @@
                     minlength:"Mínimo 5 letras",
                     maxlength:"Máximo 20 letras"
                 },
-                "sexo":{
-                    required:"Ingrese el sexo",
-                    minlength:"Mínimo 8 letras",
-                    maxlength:"Máximo 13 letras"
-                },
-                "foto": {
-                required: "Debe subir una imagen",
-                extension: "Solo se permiten archivos jpg, jpeg, png o gif"
-                },
-                "documento": {
-                    required: "Debe subir un documento PDF",
-                    extension: "Solo se permiten archivos PDF"
+                "especialidad":{
+                    required:"Ingrese la especialidad",
+                    minlength:"Mínimo 5 letras",
+                    maxlength:"Máximo 20 letras"
                 }
             }
         }
     ); 
 
 </script>
-<script>
-    $("#foto").fileinput({
-        language:"es",
-        allowedFileExtensions:
-        ["png|jpg|jpeg"],
-        showCaption:false,
-        dropZoneEnabled:true,
-        showClose:false
-    });
-</script>
+
 
 
 {% endblock %}

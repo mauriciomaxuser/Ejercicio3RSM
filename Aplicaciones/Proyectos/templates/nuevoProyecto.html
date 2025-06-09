@@ -65,12 +65,12 @@
             },
             messages:{
                 "nombre":{
-                    required:"Ingrese el nombre",
+                    required:"Ingrese el nombre del proyecto",
                     minlength:"Mínimo 5 letras",
                     maxlength:"Máximo 20 letras"
                 },
                 "descripcion":{
-                    required:"Ingrese el nombre",
+                    required:"Ingrese la descripción",
                     minlength:"Mínimo 5 letras",
                     maxlength:"Máximo 20 letras"
                 },
@@ -89,16 +89,7 @@
     ); 
 
 </script>
-<script>
-    $("#foto").fileinput({
-        language:"es",
-        allowedFileExtensions:
-        ["png|jpg|jpeg"],
-        showCaption:false,
-        dropZoneEnabled:true,
-        showClose:false
-    });
-</script>
+
 
 
 {% endblock %}
