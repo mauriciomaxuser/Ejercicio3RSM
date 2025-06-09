@@ -3,13 +3,13 @@
 
 {% block body %}
 <br>
-<h1 class="text-center">LISTADO PROYECTOS </h1>
+<h1 class="text-center">LISTADO DESARROLLADOR </h1>
 <hr>
 
 <div class="row">
     <div class="text-end">
-        <a href="nuevoProyecto " class="btn btn-success bg-info">
-        Agregar Proyecto 
+        <a href="nuevoDesarrollador " class="btn btn-success bg-info">
+        Agregar Desarrollador 
         </a>
     </div>
 </div>
@@ -19,34 +19,30 @@
         <tr>
             <th>ID</th>    
             <th>NOMBRE</th>
-            <th>DESCRIPCIÓN</th>
-            <th>FECHA</th>
-            <th>RESPONSABLE</th>
+            <th>APELLIDO</th>
+            <th>ESPECIALIDAD</th>
 
 
             <th>ACCIONES</th> 
         </tr>
     </thead>
     <tbody>
-        {% for proyectoTemporal in Proyecto %}
+        {% for desarrolladorTemporal in Desarrollador %}
             <tr>
-                <td>{{proyectoTemporal.id}}</td>
-                <td>{{proyectoTemporal.nombre}}</td>
-
-                <td>{{proyectoTemporal.descripcion}}</td>
-                <td>{{proyectoTemporal.fecha_inicio}}</td>
-                <td>{{ proyectoTemporal.responsable.nombre }} {{ proyectoTemporal.responsable.apellido }}
-
+                <td>{{desarrolladorTemporal.id}}</td>
+                <td>{{desarrolladorTemporal.nombre}}</td>
+                <td>{{desarrolladorTemporal.apellido}}</td>
+                <td>{{desarrolladorTemporal.especialidad}}</td>
 
                 <td>  
 
                     <a href="#" 
-                    onclick="editarProyecto('{{proyectoTemporal.id}}');"
+                    onclick="editarProyecto('{{desarrolladorTemporal.id}}');"
                     class="btn btn-outline-warning">
                         <i class="fa fa-pen"></i>
                     </a>           
                     <a href="#"
-                    onclick="eliminarProyecto('{{proyectoTemporal.id}}');"
+                    onclick="eliminarProyecto('{{desarrolladorTemporal.id}}');"
                      class="btn btn-outline-danger">
                      <i class="fa fa-trash"></i>
                     </a>

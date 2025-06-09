@@ -1,0 +1,104 @@
+{% extends './plantilla.html' %}
+{% load static %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 bg-light">
+        <h1>NUEVO DESARROLLADOR </h1>
+        <form action="guardarDesarrollador" 
+        enctype="multipart/form-data" 
+        method="post" >
+            {% csrf_token %}
+            <label for="">Nombre</label><br>
+            <input required placeholder="Ingrese el nombre" class="form-control" type="text" name="nombre" id="nombre"><br>
+
+            <label for="">Apellido</label><br>
+            <input required class="form-control" type="text" name="apellido" id="apellido"><br>
+
+            <label for="">Especialidad</label><br>
+            <input required class="form-control" type="text" name="especialidad" id="especialidad"><br>
+
+            
+
+            <button
+            class="btn btn-success" type="submit">Guardar</button>
+            <a 
+            class="btn btn-outline-danger" href="/desarrolladores">Cancelar</a>
+        </form>
+    
+    </div>
+    
+</div>
+<!--embeber codiog javascript/jquery-->
+
+<script>
+    $("#form_nuevo_modelo").validate(
+        {
+            rules:{
+                "nombre":{
+                    required:true,
+                    minlength:5,
+                    maxlength:20
+                },
+                "apellido":{
+                    required:true,
+                    minlength:5,
+                    maxlength:20
+                },
+                "sexo":{
+                    required:true,
+                    minlength:8,
+                    maxlength:13
+                },
+                "foto": {
+                required: true,
+                extension: "jpg|jpeg|png|gif"
+                },
+                "documento": {
+                    required: true,
+                    extension: "pdf"
+                }
+            },
+            messages:{
+                "nombre":{
+                    required:"Ingrese el nombre",
+                    minlength:"Mínimo 5 letras",
+                    maxlength:"Máximo 20 letras"
+                },
+                "apellido":{
+                    required:"Ingrese el apellido",
+                    minlength:"Mínimo 5 letras",
+                    maxlength:"Máximo 20 letras"
+                },
+                "sexo":{
+                    required:"Ingrese el sexo",
+                    minlength:"Mínimo 8 letras",
+                    maxlength:"Máximo 13 letras"
+                },
+                "foto": {
+                required: "Debe subir una imagen",
+                extension: "Solo se permiten archivos jpg, jpeg, png o gif"
+                },
+                "documento": {
+                    required: "Debe subir un documento PDF",
+                    extension: "Solo se permiten archivos PDF"
+                }
+            }
+        }
+    ); 
+
+</script>
+<script>
+    $("#foto").fileinput({
+        language:"es",
+        allowedFileExtensions:
+        ["png|jpg|jpeg"],
+        showCaption:false,
+        dropZoneEnabled:true,
+        showClose:false
+    });
+</script>
+
+
+{% endblock %}

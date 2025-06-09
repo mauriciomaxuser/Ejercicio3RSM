@@ -1,0 +1,21 @@
+#configuracion de rutas espesificas de la aplicacion empresas 
+from django.urls import path
+from .import views
+urlpatterns=[
+    path('',views.home),
+
+    path('inicio',views.inicio),
+    path('desarrolladores', views.desarrolladores),
+    path('nuevoDesarrollador', views.nuevoDesarrollador),
+    path('nuevoProyecto', views.nuevoProyecto),
+
+    path('guardarDesarrollador', views.guardarDesarrollador),
+    path('guardarProyecto', views.guardarProyecto),
+
+
+
+
+
+    
+
+]
