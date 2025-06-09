@@ -1,0 +1,72 @@
+{% extends './plantilla.html' %}
+{% load static %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 bg-light">
+        <h1>EDITAR DESARROLLADOR </h1>
+        <form action="/actualizandoDesarrollador/" 
+        method="post" >
+            {% csrf_token %}
+            <input  type="hidden" name="id" id="id" value="{{desarrolladorEditar.id}}"><br>
+
+            <label for="">Nombre</label><br>
+            <input class="form-control" type="text" name="nombre" id="nombre" value="{{desarrolladorEditar.nombre}}"><br>
+            <label for="">Apellido</label><br>
+            <input class="form-control" type="text" name="apellido" id="apellido" value="{{ desarrolladorEditar.apellido }}"><br>
+            <label for="">Especialidad</label><br>
+            <input class="form-control" type="text" name="especialidad" id="especialidad" value="{{desarrolladorEditar.especialidad}}"><br>
+
+            <button
+            class="btn btn-success" type="submit">Actualizar</button>
+            <a 
+            class="btn btn-outline-danger" href="/desarrolladores">Cancelar</a>
+        </form>
+    
+    </div>
+    
+</div>
+<!--embeber codiog javascript/jquery-->
+
+<script>
+    $("#form_nuevo_evento").validate(
+        {
+            rules:{
+                "nombre":{
+                    required:true,
+                    minlength:4,
+                    maxlength:20
+                },
+                "apellido":{
+                    required:true,
+                },
+                "especialidad":{
+                    required:true,
+                    minlength:4,
+                    maxlength:20
+                },
+            },
+            messages:{
+                "nombre":{
+                    required:"Ingrese el nombre del evento",
+                    minlength:"Mínimo 4 letras",
+                    maxlength:"Máximo 20 letras"
+                },
+                 "apellido":{
+                    required:"Ingrese el apellido",
+                    minlength:"Mínimo 4 letras",
+                    maxlength:"Máximo 20 letras"
+                },
+                "especialidad":{
+                    required:"Ingrese la especialidad",
+                    minlength:"Mínimo 4 letras",
+                    maxlength:"Máximo 20 letras"
+                },
+            }
+        }
+    ); 
+
+</script>
+
+{% endblock %}

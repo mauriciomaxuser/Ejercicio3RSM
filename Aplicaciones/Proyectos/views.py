@@ -63,3 +63,11 @@ def guardarDesarrollador(request):
     nuevoDesarrollador=Desarrollador.objects.create(nombre=nombre,apellido=apellido,especialidad=especialidad)
     messages.success(request,"Desarrollador Guardado Exitosamente")
     return redirect('/desarrolladores')
+
+
+def editarDesarrollador(request,id):
+    desarrolladorEditar=Desarrollador.objects.get(id=id)
+    return render(request,"editarDesarrollador.html", {'desarrolladorEditar':desarrolladorEditar})
+
+
+

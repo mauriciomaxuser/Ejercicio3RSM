@@ -37,7 +37,7 @@
                 <td>  
 
                     <a href="#" 
-                    onclick="editarProyecto('{{desarrolladorTemporal.id}}');"
+                    onclick="editarDesarrollador('{{desarrolladorTemporal.id}}');"
                     class="btn btn-outline-warning">
                         <i class="fa fa-pen"></i>
                     </a>           
@@ -75,7 +75,7 @@
 </script>
 
 <script>
-    function editarProyecto(id) {
+    function editarDesarrollador(id) {
         Swal.fire({
             title: "Confirmacion?",
             text: "Seguro que desea editar !",
@@ -87,7 +87,7 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 
-                    window.location.href = "/editarProyecto/" + id;
+                    window.location.href = "/editarDesarrollador/" + id;
                 }
         });
     }

@@ -11,6 +11,8 @@ urlpatterns=[
 
     path('guardarDesarrollador', views.guardarDesarrollador),
     path('guardarProyecto', views.guardarProyecto),
+    path('editarDesarrollador/<id>', views.editarDesarrollador),
+
 
 
 
