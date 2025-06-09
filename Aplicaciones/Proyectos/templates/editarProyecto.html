@@ -38,6 +38,56 @@
 </div>
 <!--embeber codiog javascript/jquery-->
 
+<script>
+    $("#form_proyecto").validate(
+        {
+            rules:{
+                "nombre":{
+                    required:true,
+                    minlength:5,
+                    maxlength:20
+                },
+                "descripcion":{
+                    required:true,
+                    minlength:5,
+                    maxlength:20
+                },
+                "fecha":{
+                    required:true,
+                    
+                },
+                "responsable":{
+                    required:true,
+                    minlength:5,
+                    maxlength:20
+                },
+                
+            },
+            messages:{
+                "nombre":{
+                    required:"Ingrese el nombre del proyecto",
+                    minlength:"Mínimo 5 letras",
+                    maxlength:"Máximo 20 letras"
+                },
+                "descripcion":{
+                    required:"Ingrese la descripción",
+                    minlength:"Mínimo 5 letras",
+                    maxlength:"Máximo 20 letras"
+                },
+                "fecha":{
+                    required:"Ingrese la fecha",
+                    
+                },
+                "responsable":{
+                    required:"Ingrese el responsable",
+                    minlength:"Mínimo 5 letras",
+                    maxlength:"Máximo 20 letras"
+                },
+                
+            }
+        }
+    ); 
 
+</script>
 
 {% endblock %}
